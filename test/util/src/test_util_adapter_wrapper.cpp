@@ -169,7 +169,7 @@ bool AdapterWrapper::error() const
 
 uint32_t AdapterWrapper::open()
 {
-    return sd_rpc_open(m_adapter, statusHandler, eventHandler, logHandler);
+    return sd_rpc_open(m_adapter, statusHandler, eventHandler, logHandler, NULL);
 }
 
 uint32_t AdapterWrapper::close()

@@ -159,8 +159,9 @@ void sd_rpc_adapter_delete(adapter_t *adapter)
 }
 
 uint32_t sd_rpc_open(adapter_t *adapter, sd_rpc_status_handler_t status_handler,
-                     sd_rpc_evt_handler_t event_handler, sd_rpc_log_handler_t log_handler)
+                     sd_rpc_evt_handler_t event_handler, sd_rpc_log_handler_t log_handler, void *user_data)
 {
+    adapter->user_data = user_data;
     auto adapterLayer = static_cast<AdapterInternal *>(adapter->internal);
 
     if (adapterLayer == nullptr)

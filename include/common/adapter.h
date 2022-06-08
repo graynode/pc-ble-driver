@@ -45,6 +45,7 @@ extern "C" {
 typedef struct
 {
     void *internal;
+    void *user_data;
 } adapter_t;
 
 typedef struct

@@ -119,11 +119,12 @@ SD_RPC_API void sd_rpc_adapter_delete(adapter_t *adapter);
  * @param[in]  status_handler  The status handler callback.
  * @param[in]  evt_handler  The event handler callback.
  * @param[in]  log_handler  The log handler callback.
+ * @param[in]  user_data optional pointer to user data. If not using pass in NULL.
  *
  * @retval NRF_SUCCESS  The module was opened successfully.
  * @retval NRF_ERROR    There was an error opening the module.
  */
-SD_RPC_API uint32_t sd_rpc_open(adapter_t *adapter, sd_rpc_status_handler_t status_handler, sd_rpc_evt_handler_t event_handler, sd_rpc_log_handler_t log_handler);
+SD_RPC_API uint32_t sd_rpc_open(adapter_t *adapter, sd_rpc_status_handler_t status_handler, sd_rpc_evt_handler_t event_handler, sd_rpc_log_handler_t log_handler, void *user_data);
 
 /**@brief Close the SoftDevice RPC module.
  *
